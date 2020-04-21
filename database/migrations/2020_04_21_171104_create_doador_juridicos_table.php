@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Doadors extends Migration
+class CreateDoadorJuridicosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class Doadors extends Migration
      */
     public function up()
     {
-        Schema::create('doadors', function (Blueprint $table) {
+        Schema::create('doador_juridicos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-            $table->string('e-mail');
-            $table->string('cpf');
+            $table->string('instituicao');
             $table->string('cnpj');
             $table->string('telefone');
-            $table->string('instituicao');
+            $table->string('e-mail');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class Doadors extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doadors');
+        Schema::dropIfExists('doador_juridicos');
     }
 }
